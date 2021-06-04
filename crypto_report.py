@@ -1,3 +1,5 @@
+# The purpose of this program is to create a report on crypto assets 
+# The report will contain data such as ROI and % gains/losses
 import smtplib
 import pandas as pd # DataFrame operations plus .csv I/O
 import numpy as np # linear algebra
