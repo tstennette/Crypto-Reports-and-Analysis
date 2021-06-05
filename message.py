@@ -1,8 +1,6 @@
 import pandas as pd # DataFrame operations plus .csv I/O
 import numpy as np # linear algebra
 import os
-from time import sleep
-import coinmarketcapapi as coin
 from datetime import datetime
 import csv
 

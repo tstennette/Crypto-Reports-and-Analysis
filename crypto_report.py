@@ -9,9 +9,10 @@ import coinmarketcapapi as coin
 from datetime import datetime
 import csv
 import message as msg 
+from getpass import getpass
 
 sec_per_hr = 3600
-end_time = "17:00"
+end_time = "18:00"
 
 
 def update_data(df):
@@ -69,7 +70,8 @@ if __name__ == "__main__":
 
 	print("Welcome to Crypto Asset Reports!\n")
 	email = input("Enter Email address: ")
-	password = input("Password: ")
+	#password = input("Password: ")
+	password = getpass()
 	sleep_time = float(input("Enter time interval (hours) for report generation: "))
 
 	while True:
