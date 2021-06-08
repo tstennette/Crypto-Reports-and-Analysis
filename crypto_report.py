@@ -12,19 +12,20 @@ import message as msg
 from getpass import getpass
 
 sec_per_hr = 3600
-end_time = "18:00"
 
-
+'''
+Gets the current data from CoinMarketCap API and updates dataframe
+Parses a json object for each crypto to extract price and % changes
+'''
 def update_data(df):
 	symbols = df['Symbol'].to_list()
-	prices = []
-	p_1hr = []
-	p_7d = []
-	p_24hr = []
-	p_30d = []
+	prices = [] # current price for each crypto
+	p_1hr = [] # % change in 1 hr
+	p_7d = [] # % change in 7 days
+	p_24hr = [] # % change in 1 day
+	p_30d = [] # % change in a month
 
 	i = 0
-	df['Date'] = datetime.now().strftime("%m-%d-%Y %H:%M")
 	cmc = coin.CoinMarketCapAPI('935cfaa3-eb85-490c-9a9c-aba1bbc065b8')
 	while i < len(symbols):
 		json_data = cmc.cryptocurrency_quotes_latest(symbol=symbols[i])
@@ -46,6 +47,7 @@ def update_data(df):
 
 		i = i + 1
 
+	df['Date'] = datetime.now().strftime("%m-%d-%Y %H:%M")
 	df['Price'] = prices
 	df['1hr % Change'] = p_1hr
 	df['24hr % Change'] = p_24hr
@@ -69,10 +71,13 @@ def send_email(email, password, message):
 if __name__ == "__main__":
 
 	print("Welcome to Crypto Asset Reports!\n")
+	end_time = "22:00"
+	#email = "ENTER EMAIL"
+	#password = "ENTER PASSWORD"
+	sleep_time = 1 # number of hours in between reports; '0' to generate once
 	email = input("Enter Email address: ")
-	#password = input("Password: ")
 	password = getpass()
-	sleep_time = float(input("Enter time interval (hours) for report generation: "))
+	#sleep_time = float(input("Enter time interval (hours) for report generation: "))
 
 	while True:
 		c_time = datetime.now().strftime("%H:%M")
