@@ -71,13 +71,13 @@ def send_email(email, password, message):
 if __name__ == "__main__":
 
 	print("Welcome to Crypto Asset Reports!\n")
-	end_time = "22:00"
+	end_time = "18:05"
 	#email = "ENTER EMAIL"
 	#password = "ENTER PASSWORD"
-	sleep_time = 1 # number of hours in between reports; '0' to generate once
+	#sleep_time = 1 # number of hours in between reports; '0' to generate once
 	email = input("Enter Email address: ")
 	password = getpass()
-	#sleep_time = float(input("Enter time interval (hours) for report generation: "))
+	sleep_time = float(input("Enter time interval (hours) for report generation: "))
 
 	while True:
 		c_time = datetime.now().strftime("%H:%M")
