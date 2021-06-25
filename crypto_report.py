@@ -54,6 +54,7 @@ def update_data(df):
 	df['7d % Change'] = p_7d
 	df['30d % Change'] = p_30d
 	df['Total Value'] = round((df['Price'] * df['Quantity']), 2)
+	df.sort_values(by='Total Value', ascending = False, inplace=True)
 
 	return df
 
@@ -71,19 +72,19 @@ def send_email(email, password, message):
 if __name__ == "__main__":
 
 	print("Welcome to Crypto Asset Reports!\n")
-	end_time = "20:05"
-	#email = "ENTER EMAIL"
-	#password = "ENTER PASSWORD"
-	#sleep_time = 1 # number of hours in between reports; '0' to generate once
-	email = input("Enter Email address: ")
-	password = getpass()
-	sleep_time = float(input("Enter time interval (hours) for report generation: "))
+	#end_time = "20:05"
+	email = "tcstennette8330@gmail.com"
+	password = "tylerS13!"
+	sleep_time = 3 # number of hours in between reports; '0' to generate once
+	#email = input("Enter Email address: ")
+	#password = getpass()
+	#sleep_time = float(input("Enter time interval (hours) for report generation: "))
 
 	while True:
-		c_time = datetime.now().strftime("%H:%M")
-		if c_time > end_time:
-			print ("You are past the end time")
-			break
+		#c_time = datetime.now().strftime("%H:%M")
+		#if c_time > end_time:
+			#print ("You are past the end time")
+			#break
 		
 		df1 = pd.read_csv('Crypto Assets.csv')
 		df_final = update_data(df1)
