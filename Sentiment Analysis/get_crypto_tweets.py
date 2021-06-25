@@ -9,10 +9,6 @@ from datetime import datetime, timedelta
 #access_token= 'ENTER ACCESS TOKEN'
 #access_token_secret= 'ENTER SECRET TOKEN'
 
-consumer_key= 'ZfiVcvMgHDRq5qv6Kx4jZ7pDV'
-consumer_secret= 'Wgn6nhTZqY5eZ8o3YLbbg2eyzw4u9eiUxHTnKPhx6jW9Fv3Twf'
-access_token= '1311507395311366144-AmEWKKujJUZMs8V0ME65vt5MSCjsp4'
-access_token_secret= 'lS6g8DJTlBSdUEb8ynRwhsb24ueVk4YIJwrXkmmvPiAyx'
 
 auth = tw.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
