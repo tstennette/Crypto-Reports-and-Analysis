@@ -73,12 +73,9 @@ if __name__ == "__main__":
 
 	print("Welcome to Crypto Asset Reports!\n")
 	#end_time = "20:05"
-	email = "tcstennette8330@gmail.com"
-	password = "tylerS13!"
-	sleep_time = 3 # number of hours in between reports; '0' to generate once
-	#email = input("Enter Email address: ")
-	#password = getpass()
-	#sleep_time = float(input("Enter time interval (hours) for report generation: "))
+	email = input("Enter Email address: ")
+	password = getpass()
+	sleep_time = float(input("Enter time interval (hours) for report generation: "))
 
 	while True:
 		#c_time = datetime.now().strftime("%H:%M")
